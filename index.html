@@ -7,56 +7,82 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Jost|Red Hat Text|Spartan|Cabin' rel='stylesheet'>
     <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="./styles.css">
 
     <title>Tic-Tac-Toe</title>
 </head>
+
+
 <body>
-    
-    <h2>Welcome to Tic-Tac-Toe!</h2>
-    
-    <div class="board">
-        <div class="board-box">
-            <div class="board-cell" data-id="0">
+
+    <div id="frontpage">
+        <div class="row">
+            <div class="col-12">
+                <h1>TIC - TAC - TOE</h1>
             </div>
         </div>
-        <div class="board-box">
-            <div class="board-cell" data-id="1">
-            </div>
-        </div>
-        <div class="board-box">
-            <div class="board-cell" data-id="2">
-            </div>
-        </div>
-        <div class="board-box">
-            <div class="board-cell" data-id="3">
-            </div>
-        </div>
-        <div class="board-box">
-            <div class="board-cell" data-id="4">
-            </div>
-        </div>
-        <div class="board-box">
-            <div class="board-cell" data-id="5">
-            </div>
-        </div>
-        <div class="board-box">
-            <div class="board-cell" data-id="6">
-            </div>
-        </div>
-        <div class="board-box">
-            <div class="board-cell" data-id="7">         
-            </div>
-        </div>
-        <div class="board-box">
-            <div class="board-cell" data-id="8">
+        <div class="row">
+            <div class="col">
+                
+                <h2><a href="#gamepage">Start game</a></h2>
             </div>
         </div>
     </div>
 
-    <p id="player-text">Player X's turn</p>
-    <button id="restart-btn" class="btn btn-outline-primary" onclick="resetboard()">Restart!</button>
+    <div  id="gamepage">
+        <div class="row">
+            <div class="col-12 col-lg align-self-center text-center">
+                <p id="player-text">Player X's turn</p>
+            </div>
+            <div class="col align-self-center order-first order-lg-0">
+                <div class="board mx-auto mt-5 mb-4 my-lg-2">
+                    <div class="board-box">
+                        <div class="board-cell" data-id="0">
+                        </div>
+                    </div>
+                    <div class="board-box">
+                        <div class="board-cell" data-id="1">
+                        </div>
+                    </div>
+                    <div class="board-box">
+                        <div class="board-cell" data-id="2">
+                        </div>
+                    </div>
+                    <div class="board-box">
+                        <div class="board-cell" data-id="3">
+                        </div>
+                    </div>
+                    <div class="board-box">
+                        <div class="board-cell" data-id="4">
+                        </div>
+                    </div>
+                    <div class="board-box">
+                        <div class="board-cell" data-id="5">
+                        </div>
+                    </div>
+                    <div class="board-box">
+                        <div class="board-cell" data-id="6">
+                        </div>
+                    </div>
+                    <div class="board-box">
+                        <div class="board-cell" data-id="7">         
+                        </div>
+                    </div>
+                    <div class="board-box">
+                        <div class="board-cell" data-id="8">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col align-self-center text-center align-content-center">
+                <button id="restart-btn" class="btn btn-primary " onclick="resetboard()">Restart</button>
+                <a id="back-btn" class="btn btn-secondary" href="#frontpage">Go back</a>
+            </div>
+            
+        </div>
+    </div>
 
     <script
   src="https://code.jquery.com/jquery-3.6.0.slim.min.js"

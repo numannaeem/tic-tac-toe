@@ -65,7 +65,7 @@ function changePlayer() {
 }
 function winner(player) {
     for(let a in position)
-        $(`[data-id=${position[a]}]`).css('background-color','lightgreen')
+        $(`[data-id=${position[a]}]`).css('background-color','#ffd743')
     $('.board-cell').off();
     let winnertext= player + " wins! :)"
     if(player == 'draw') 
@@ -75,7 +75,7 @@ function winner(player) {
 
 function resetboard() {
     console.log('Restarted')
-    $(`.board-cell`).css('background-color','#bad8f5')
+    $(`.board-cell`).css('background-color','#ffa889')
     $('.board-cell').removeClass('X O')
     turn = 'X'
     gameWinner = ""

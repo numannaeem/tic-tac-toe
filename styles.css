@@ -1,27 +1,40 @@
 html {
+    scroll-behavior: smooth;
     font-size: 16px;
 }
-
+h1,h2 {
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
 body {
+    font-family: 'Red Hat Text', sans-serif;
     padding: 1rem;
-    background-color: #efefef;
-    overflow-y: hidden;
+    background-color: #fce8e5;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 20vmin;
 }
 
 h2 {
-    text-align: center;
-    padding: 16px;
     font-size: 3rem;
 }
 
+#frontpage, #gamepage {
+    height: 100vh;
+}
+
+#gamepage > .row {
+    height: 100%;
+}
+
 .board {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     width: 60vmin;
     height: 60vmin;
-    background-color: aliceblue;
+    background-color: #ff4e00;
     border-radius: 10%;
     box-shadow: 0px 0px 20px rgb(151, 151, 151);
     padding: 0.5%;
@@ -35,7 +48,7 @@ h2 {
 }
 
 .board-cell {
-    background-color: #bad8f5;
+    background-color: #ffa889;
     border-radius: 30%;
     width: 100%;
     height: 100%;
@@ -62,8 +75,26 @@ h2 {
 #player-text {
     text-align: center;
     font-size: 2.5rem;
-    position: absolute;
-    left: 82%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+}
+
+.btn {
+    min-width: 160px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+#restart-btn {
+    background-color: #0084d9 ;
+} 
+
+#restart-btn:hover {
+    background-color: #025ab1;
+}
+
+
+@media only screen and (max-width: 540px) {
+    .board {
+        width: 85vw;
+        height: 85vw;
+    }
 }

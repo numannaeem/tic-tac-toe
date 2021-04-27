@@ -8,6 +8,13 @@ var player = ""
 var counter = 0;
 var gameStarted = false
 const colors = ['red','orange','yellow','cyan','green','blue','violet']
+var deg = 0;
+
+// setInterval(function() {
+//     console.log($('#frontpage').css('background-image'))
+//     $('#frontpage').css('background-image',`linear-gradient(${deg}deg, hsl(280, 100%, 87%),hsl(280, 100%, 97%))`)
+//     deg = (deg == 360)? 0 : deg+1;
+// },10)
 
 var colorchangerVar;
 function colorchangerFn() {

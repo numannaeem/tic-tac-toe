@@ -10,20 +10,54 @@ h1,h2 {
 }
 body {
     font-family: 'Red Hat Text', sans-serif;
-    padding: 1rem;
     background-color: #fce8e5;
     overflow: hidden;
 }
 
+.page-body {
+    min-height: 80vh;
+}
+
+a {
+    transition: 0.3s;
+    color: #9400d3;
+}
+a:hover {
+    color: indigo;
+    text-decoration: none;
+}
+
 h1 {
-    font-size: 20vmin;
+    font-size: 10vmax;
 }
 
 h2 {
     font-size: 3rem;
 }
 
+.footer {
+    padding: 0;
+    height: 17vh;
+    width: 100%;
+}
+
+.footer-icons {
+    cursor: pointer;
+    margin: 5px 8px;
+}
+
+.player-input {
+    max-width: 300px;
+    border-radius: 10px;
+    border: solid 2px;
+}
+
+#frontpage {
+    background-color: hsl(282, 100%, 97%);
+}
+
 #frontpage, #gamepage {
+    padding: 1rem;
     height: 100vh;
 }
 
@@ -31,10 +65,11 @@ h2 {
     height: 100%;
 }
 
+
 .board {
     width: 60vmin;
     height: 60vmin;
-    background-color: #ff4e00;
+    background-color: hsl(18, 100%, 50%);
     border-radius: 10%;
     box-shadow: 0px 0px 20px rgb(151, 151, 151);
     padding: 0.5%;
@@ -73,6 +108,7 @@ h2 {
 }
 
 #player-text {
+    transition: 0.5s;
     text-align: center;
     font-size: 2.5rem;
 }
@@ -91,10 +127,22 @@ h2 {
     background-color: #025ab1;
 }
 
+.fa-lg {
+    font-size: 27px;
+}
+
 
 @media only screen and (max-width: 540px) {
     .board {
         width: 85vw;
         height: 85vw;
     }
+
+    #gamepage > .row {
+        height: 95%;
+    }
+
+    .page-body {
+        min-height: 75vh;
+    }    
 }

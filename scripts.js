@@ -2,14 +2,29 @@ var turn = 'X'
 var gameWinner = ""
 var gameState= ["","","","","","","","",""]
 var position = []
+var p1 = "Player X"
+var p2 = "Player O"
+var player = ""
+var counter = 0;
+var gameStarted = false
+const colors = ['red','orange','yellow','cyan','green','blue','violet']
+
+var colorchangerVar;
+function colorchangerFn() {
+    colorchangerVar = setInterval(colorchanger,200)
+}
+
+function colorchanger() {
+    $('#player-text').css('color',colors[counter])
+    $('#player-text').css('text-shadow',`0px 0px 2px ${colors[counter]}`)
+    counter = (counter == colors.length - 1)? 0: counter+1
+}
 
 function initgame() { 
     console.log("Initialised!")
     $('.board-cell').hover(
         function() { 
             if (gameState[$(this).data('id')] == '') {
-                // $(this).css("opacity", 0)
-                // setTimeout(() => $(this).css("opacity", 1) , 300)
                 $(this).addClass('hover ' + turn)
             }
         },
@@ -20,6 +35,7 @@ function initgame() {
     )
 
     $('.board-cell').click(function() {
+        gameStarted = true
         if (gameState[$(this).data('id')] == '') {
             $(this).addClass(turn)
             $(this).removeClass('hover')
@@ -49,28 +65,37 @@ function checkwin() {
         if(a=='' || b=='' || c=='')
             continue;
         if (a==b && b==c) {
-            gameWinner = turn
+            gameWinner = player
             break
         }
     }
-    if (!gameState.includes(''))
+    if (gameWinner == "" && !gameState.includes(''))
         gameWinner = 'draw'
     if(gameWinner != "")
         winner(gameWinner)
     else changePlayer()
 }
 function changePlayer() {
-    turn = (turn == 'X')? 'O' : 'X'
-    $('#player-text').text("Player " + turn +"'s turn")
+    turn = (turn == 'X') ? 'O' : 'X'
+    player = (turn == 'O') ? p2 : p1
+    $('#player-text').text(player+"'s turn")
+
 }
 function winner(player) {
-    for(let a in position)
-        $(`[data-id=${position[a]}]`).css('background-color','#ffd743')
     $('.board-cell').off();
-    let winnertext= player + " wins! :)"
-    if(player == 'draw') 
-        winnertext = "It's a draw :/"
-    $('#player-text').text(winnertext)
+    let winnertext = `${player} wins!`
+    if(player == 'draw') {
+        $(`.board-cell`).css('background-color','#ffd743')
+        winnertext = "It's a tie :/"
+        $('#player-text').text(winnertext)
+    }
+    else {
+        for(let a in position)
+            $(`[data-id=${position[a]}]`).css('background-color','lightgreen')
+        $('#player-text').text(winnertext)
+        colorchangerFn();
+    }    
+    
 }
 
 function resetboard() {
@@ -80,8 +105,23 @@ function resetboard() {
     turn = 'X'
     gameWinner = ""
     gameState= ["","","","","","","","",""]
-    $('#player-text').text("Player " + turn +"'s turn")
+    position = []
+    player = p1
+    gameStarted = false
+    clearInterval(colorchangerVar)
+    $('#player-text').css('color', 'black')
+    $('#player-text').css('text-shadow', 'none')
+    $('#player-text').text(p1 +"'s turn")
     initgame();
 }
+
+$('#start-btn').click(assignPlayers = function() {
+    p1 = $(`#p1`).val() || 'Player X'
+    p2 = $(`#p2`).val() || 'Player O'
+    if (gameStarted == false)
+        player = p1;
+    $(`#player-text`).text(`${player}'s turn`)
+})
+
 
 initgame();

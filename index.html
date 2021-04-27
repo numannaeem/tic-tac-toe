@@ -18,26 +18,43 @@
 <body>
 
     <div id="frontpage">
-        <div class="row">
-            <div class="col-12">
-                <h1>TIC - TAC - TOE</h1>
+        <div class="page-body">
+            <div class="row">
+                <div class="col-12">
+                    <h1>TIC TAC TOE</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-5">
+                    <form>
+                        <input type="text" class="mx-auto text-center form-control-plaintext player-input" placeholder="Player X's name" id="p1">
+                        <input type="text" class="mx-auto text-center form-control-plaintext player-input mt-3" placeholder="Player O's name" id="p2">
+                    </form>
+                </div>
+                <div class="col-12 mt-5">
+                    <h2><a id="start-btn" href="#gamepage">Start game <span class="fa fa-angle-double-down"></span></a></h2>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                
-                <h2><a href="#gamepage">Start game</a></h2>
+        <div class="footer text-center">
+            <hr>
+            <div class="footer-text align-self-center">
+                <p><span class="fa fa-copyright"></span> Created by Numan Naeem</p>
+                <a class="footer-icons" href="https://www.github.com/numannaeem" target="_blank"><span class="fa fa-lg fa-github"></span></a>
+                <a class="footer-icons" href="https://www.linkedin.com/in/numan-naeem-7a950b207/" target="_blank"><span class="fa fa-lg fa-linkedin"></span></a>
+                <a class="footer-icons" href="https://www.instagram.com/num4n_/" target="_blank"><span class="fa fa-lg fa-instagram"></span></a>
+                <a class="footer-icons" href="mailto:numan.naeem9@gmail.com" target="_blank"><span class="fa fa-lg fa-envelope-o"></span></a>
             </div>
         </div>
     </div>
 
     <div  id="gamepage">
         <div class="row">
-            <div class="col-12 col-lg align-self-center text-center">
+            <div class="col-12 col-lg align-self-center mt-5 text-center overflow-hidden">
                 <p id="player-text">Player X's turn</p>
             </div>
-            <div class="col align-self-center order-first order-lg-0">
-                <div class="board mx-auto mt-5 mb-4 my-lg-2">
+            <div class="col-12 col-lg align-self-center">
+                <div class="board mx-auto my-lg-2">
                     <div class="board-box">
                         <div class="board-cell" data-id="0">
                         </div>
@@ -76,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col align-self-center text-center align-content-center">
+            <div class="col-12 col-lg text-center align-self-center">
                 <button id="restart-btn" class="btn btn-primary " onclick="resetboard()">Restart</button>
                 <a id="back-btn" class="btn btn-secondary" href="#frontpage">Go back</a>
             </div>

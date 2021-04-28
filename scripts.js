@@ -15,7 +15,7 @@ var deg = 0;
 //     $('#frontpage').css('background-image',`linear-gradient(${deg}deg, hsl(280, 100%, 87%),hsl(280, 100%, 97%))`)
 //     deg = (deg == 360)? 0 : deg+1;
 // },10)
-vanillaTilt.init("#tictactoe-text");
+VanillaTilt.init(document.querySelector("#tictactoe-text"));
 var colorchangerVar;
 function colorchangerFn() {
     colorchangerVar = setInterval(colorchanger,200)

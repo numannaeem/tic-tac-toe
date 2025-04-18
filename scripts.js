@@ -9,13 +9,13 @@ var counter = 0;
 var gameStarted = false
 const colors = ['red','orange','yellow','cyan','green','blue','violet']
 var deg = 0;
-
+var moves = []
 // setInterval(function() {
 //     console.log($('#frontpage').css('background-image'))
 //     $('#frontpage').css('background-image',`linear-gradient(${deg}deg, hsl(280, 100%, 87%),hsl(280, 100%, 97%))`)
 //     deg = (deg == 360)? 0 : deg+1;
 // },10)
-VanillaTilt.init(document.querySelector("#tictactoe-text"));
+VanillaTilt.init();
 var colorchangerVar;
 function colorchangerFn() {
     colorchangerVar = setInterval(colorchanger,200)
@@ -31,22 +31,23 @@ function initgame() {
     console.log("Initialised!")
     $('.board-cell').hover(
         function() { 
-            if (gameState[$(this).data('id')] == '') {
+            if (gameState[$(this).data('id')] == '' && !$(this).hasClass('disabled')) {
                 $(this).addClass('hover ' + turn)
             }
         },
         function() { 
-            if (gameState[$(this).data('id')] == '')
+            if (gameState[$(this).data('id')] == '' && !$(this).hasClass('disabled'))
                 $(this).removeClass('hover '+ turn) 
         }
     )
 
     $('.board-cell').click(function() {
         gameStarted = true
-        if (gameState[$(this).data('id')] == '') {
+        if (gameState[$(this).data('id')] == '' && !$(this).hasClass('disabled')) {
             $(this).addClass(turn)
             $(this).removeClass('hover')
             gameState[$(this).data('id')] = turn
+            moves.push($(this).data('id'))
             checkwin();
         }
     })
@@ -85,7 +86,14 @@ function checkwin() {
 function changePlayer() {
     turn = (turn == 'X') ? 'O' : 'X'
     player = (turn == 'O') ? p2 : p1
+    $('.board-cell').removeClass('disabled')
     $('#player-text').text(player+"'s turn")
+    if (gameState.filter(el => el == '').length < 4) {
+        el_to_remove = moves.shift()
+        $(`[data-id=${el_to_remove}]`).removeClass('X O hover')
+        $(`[data-id=${el_to_remove}]`).addClass('disabled')
+        gameState[el_to_remove] = ''
+    }
 
 }
 function winner(player) {
@@ -97,6 +105,7 @@ function winner(player) {
         $('#player-text').text(winnertext)
     }
     else {
+        $('.board-cell').removeClass('disabled')
         for(let a in position)
             $(`[data-id=${position[a]}]`).css('background-color','lightgreen')
         $('#player-text').text(winnertext)
@@ -107,14 +116,15 @@ function winner(player) {
 
 function resetboard() {
     console.log('Restarted')
-    $(`.board-cell`).css('background-color','#ffa889')
-    $('.board-cell').removeClass('X O')
+    $(`.board-cell`).css('background-color','')
+    $('.board-cell').removeClass('X O disabled')
     turn = 'X'
     gameWinner = ""
     gameState= ["","","","","","","","",""]
     position = []
     player = p1
     gameStarted = false
+    moves = []
     clearInterval(colorchangerVar)
     $('#player-text').css('color', 'black')
     $('#player-text').css('text-shadow', 'none')

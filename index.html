@@ -1,112 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Jost|Red Hat Text|Spartan|Cabin' rel='stylesheet'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./styles.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Jost|Red Hat Text|Spartan|Cabin"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
 
     <title>Tic-Tac-Toe</title>
-</head>
+  </head>
 
-
-<body>
-
+  <body>
     <div id="frontpage">
-        <div class="page-body">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="mx-auto px-5 py-4" data-tilt data-tilt-glare data-tilt-max-glare="0.8" id="tictactoe-text">TIC TAC TOE</h1>
-                </div>
-                <div class="col-12 mt-5">
-                    <form>
-                        <input type="text" class="mx-auto text-center form-control-plaintext player-input" placeholder="Player X's name" id="p1">
-                        <input type="text" class="mx-auto text-center form-control-plaintext player-input mt-3" placeholder="Player O's name" id="p2">
-                    </form>
-                </div>
-                <div class="col-12 mt-5">
-                    <h2><a id="start-btn" href="#gamepage">Start game <span class="fa fa-angle-double-down"></span></a></h2>
-                </div>
-            </div>
+      <div class="page-body">
+        <div class="row">
+          <div class="col-12">
+            <h1
+              class="mx-auto px-5 py-4"
+              data-tilt
+              data-tilt-glare
+              data-tilt-max-glare="0.8"
+              id="tictactoe-text"
+            >
+              NUM TAC TOE
+            </h1>
+          </div>
+          <div class="col-12 col-md-6 mx-auto text-center">
+            <h5>
+                A special version of tic-tac-toe where there must be atleast 4 empty cells at any given time. Or else, the oldest marked cell is cleared and becomes disabled for one round.
+            </h5>
+            <h6>
+                (Start playing; you'll get the hang of it)
+            </h6>
+          </div>
+          <div class="col-12 mt-5">
+            <form>
+              <input
+                type="text"
+                class="mx-auto text-center form-control-plaintext player-input"
+                placeholder="Player X's name"
+                id="p1"
+              />
+              <input
+                type="text"
+                class="mx-auto text-center form-control-plaintext player-input mt-3"
+                placeholder="Player O's name"
+                id="p2"
+              />
+            </form>
+          </div>
+          <div class="col-12 mt-5">
+            <h2>
+              <a id="start-btn" href="#gamepage"
+                >Start game <span class="fa fa-angle-double-down"></span
+              ></a>
+            </h2>
+          </div>
         </div>
-        <div class="footer text-center">
-            <hr class="mt-0">
-            <div class="footer-text align-self-center">
-                <p><span class="fa fa-copyright"></span> Created by Numan Naeem</p>
-                <a class="footer-icons" href="https://www.github.com/numannaeem" target="_blank"><span class="fa fa-lg fa-github"></span></a>
-                <a class="footer-icons" href="https://www.linkedin.com/in/numan-naeem-7a950b207/" target="_blank"><span class="fa fa-lg fa-linkedin"></span></a>
-                <a class="footer-icons" href="https://www.instagram.com/num4n_/" target="_blank"><span class="fa fa-lg fa-instagram"></span></a>
-                <a class="footer-icons" href="mailto:numan.naeem9@gmail.com" target="_blank"><span class="fa fa-lg fa-envelope-o"></span></a>
-            </div>
+      </div>
+      <div class="footer text-center">
+        <hr class="mt-0" />
+        <div class="footer-text align-self-center">
+          <p><span class="fa fa-copyright"></span> Created by Numan Naeem</p>
+          <a class="footer-icons" href="https://www.github.com/numannaeem" target="_blank"
+            ><span class="fa fa-lg fa-github"></span
+          ></a>
+          <a
+            class="footer-icons"
+            href="https://www.linkedin.com/in/numan-naeem-7a950b207/"
+            target="_blank"
+            ><span class="fa fa-lg fa-linkedin"></span
+          ></a>
+          <a class="footer-icons" href="https://www.instagram.com/num4n_/" target="_blank"
+            ><span class="fa fa-lg fa-instagram"></span
+          ></a>
+          <a class="footer-icons" href="mailto:numan.naeem9@gmail.com" target="_blank"
+            ><span class="fa fa-lg fa-envelope-o"></span
+          ></a>
         </div>
+      </div>
     </div>
 
-    <div  id="gamepage">
-        <div class="row">
-            <div class="col-12 col-lg align-self-center mt-5 text-center overflow-hidden">
-                <p id="player-text">Player X's turn</p>
-            </div>
-            <div class="col-12 col-lg align-self-center">
-                <div class="board mx-auto my-lg-2">
-                    <div class="board-box">
-                        <div class="board-cell" data-id="0">
-                        </div>
-                    </div>
-                    <div class="board-box">
-                        <div class="board-cell" data-id="1">
-                        </div>
-                    </div>
-                    <div class="board-box">
-                        <div class="board-cell" data-id="2">
-                        </div>
-                    </div>
-                    <div class="board-box">
-                        <div class="board-cell" data-id="3">
-                        </div>
-                    </div>
-                    <div class="board-box">
-                        <div class="board-cell" data-id="4">
-                        </div>
-                    </div>
-                    <div class="board-box">
-                        <div class="board-cell" data-id="5">
-                        </div>
-                    </div>
-                    <div class="board-box">
-                        <div class="board-cell" data-id="6">
-                        </div>
-                    </div>
-                    <div class="board-box">
-                        <div class="board-cell" data-id="7">         
-                        </div>
-                    </div>
-                    <div class="board-box">
-                        <div class="board-cell" data-id="8">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg text-center align-self-center">
-                <button id="restart-btn" class="btn btn-primary " onclick="resetboard()">Restart</button>
-                <a id="back-btn" class="btn btn-secondary" href="#frontpage">Go back</a>
-            </div>
-            
+    <div id="gamepage">
+      <div class="row">
+        <div class="col-12 col-lg align-self-center mt-5 text-center overflow-hidden">
+          <p id="player-text">Player X's turn</p>
         </div>
+        <div class="col-12 col-lg align-self-center">
+          <div class="board mx-auto my-lg-2">
+            <div class="board-box">
+              <div class="board-cell" data-id="0"></div>
+            </div>
+            <div class="board-box">
+              <div class="board-cell" data-id="1"></div>
+            </div>
+            <div class="board-box">
+              <div class="board-cell" data-id="2"></div>
+            </div>
+            <div class="board-box">
+              <div class="board-cell" data-id="3"></div>
+            </div>
+            <div class="board-box">
+              <div class="board-cell" data-id="4"></div>
+            </div>
+            <div class="board-box">
+              <div class="board-cell" data-id="5"></div>
+            </div>
+            <div class="board-box">
+              <div class="board-cell" data-id="6"></div>
+            </div>
+            <div class="board-box">
+              <div class="board-cell" data-id="7"></div>
+            </div>
+            <div class="board-box">
+              <div class="board-cell" data-id="8"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg text-center align-self-center">
+          <button id="restart-btn" class="btn btn-primary" onclick="resetboard()">
+            Restart
+          </button>
+          <a id="back-btn" class="btn btn-secondary" href="#frontpage">Go back</a>
+        </div>
+      </div>
     </div>
 
     <script
-  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-  crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" 
-  integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" 
-  crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"
+      integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg=="
+      crossorigin="anonymous"
+    ></script>
     <script src="./scripts.js"></script>
-
-</body>
+  </body>
 </html>
